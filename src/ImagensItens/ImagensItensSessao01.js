@@ -15,6 +15,7 @@ import Quadro from '../ImagensSessão01/Quadro.png'
 import AlfaiateriaDoretCartão from '../ImagensSessão01/AlfaiateriaDoretCartão.png'
 import AtaReuniao from '../ImagensSessão01/AtaReuniao.png'
 import SimboloVitruviano from '../ImagensSessão01/SimboloVitruviano.jpg'
+import LivroDosVitruvianos from '../ImagensSessão01/LivroDosVitruvianos.png'
 import ItensSessao01DataService from '../Services/ItensSessao01Service.js';
 
 
@@ -244,17 +245,32 @@ function ImagensItensSessao01(){
                     {
                         !itens.itens_hospital ? '' :
                         <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                            <h1 style ={{paddingBottom:'30px', paddingTop:'30px', color: '#fff'}}>Itens Hospital:</h1>
                             {
                                 !itens.ata_reuniao ? '' :
                                 <div>
                                     <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
-                                        <h1 style ={{paddingBottom:'30px', paddingTop:'30px', color: '#fff'}}>Itens Hospital:</h1>
                                         <h1 style ={{paddingBottom:'20px', paddingTop:'20px', color: '#fff'}}>Ata Reunião 1999:</h1>
                                     </div>
                                     <div>
                                         <TransformWrapper>
                                             <TransformComponent>
                                                 <img src={AtaReuniao} alt="test" style={{width:'50%'}}/>
+                                            </TransformComponent>
+                                        </TransformWrapper>
+                                    </div>
+                                </div>
+                            }
+                            {
+                                !itens.livro_homem_perfeito ? '' :
+                                <div>
+                                    <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
+                                        <h1 style ={{paddingBottom:'20px', paddingTop:'20px', color: '#fff'}}>Livro O Homem Perfeito:</h1>
+                                    </div>
+                                    <div>
+                                        <TransformWrapper>
+                                            <TransformComponent>
+                                                <img src={LivroDosVitruvianos} alt="test" style={{width:'75%'}}/>
                                             </TransformComponent>
                                         </TransformWrapper>
                                     </div>
