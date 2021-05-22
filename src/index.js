@@ -14,6 +14,7 @@ import Iniciativa from './Iniciativa/Iniciativa';
 import TelaRolls from './TelaRolls/TelaRolls.js';
 import Mestre from './Mestre/Mestre';
 import Monstros from './MonstrosPagina/Monstros.js';
+import Tarot from './TarotPagina/Tarot.js';
 import PersonagensNPC from './PersonagensNPC/PersonagensNPC.js';
 import TierList from './TierList/TierList';
 import ImagensItensSessao01 from './ImagensItens/ImagensItensSessao01';
@@ -39,6 +40,7 @@ window.onload = function(){
             <Route path="/Mestre" component={Mestre} exact />
             <Route path="/Monstros" component={Monstros} exact />
             <Route path="/Personagens" component={PersonagensNPC} exact />
+            <Route path="/Tarot" component={Tarot} exact />
             <Route path="/ItensSessao01" component={ImagensItensSessao01} exact />
             {dataPlayer == null ? '' :  dataPlayer.map((d, index) => {
 
