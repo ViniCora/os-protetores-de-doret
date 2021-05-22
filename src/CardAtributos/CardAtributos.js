@@ -258,7 +258,7 @@ function CardAtributos({Atributo, Banco, Value, id, Adicionar, setAdicionar, nom
                                     {Atributo === 'Iniciativa' ? 
                                         <button style={{backgroundColor: '#000', color: '#fff',fontSize: '20px', borderColor: '#fff', 
                                         borderRadius: '8px', borderStyle: 'solid', borderWidth: '2px'}} onClick={()=>{
-                                            window.open('https://os-sem-floresta.herokuapp.com/iniciativa');
+                                            window.open('https://os-protetores-de-doret-api.herokuapp.com/iniciativa');
                                             setIsOpen(false); setHasRoll(false); setModifier(0);
                                         }
                                         }>Ir para iniciativa</button>
