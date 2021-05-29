@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import Header from '../Header/Header.js';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-import VitruvianoAntigo from '../Monstros/VitruvianoAntigo.png'
+import VitruvianoAntigo from '../Monstros/VitruvianoAntigo.png';
+import VitruvianoNovo from '../Monstros/VitruvianoNovo.png';
+import Acorrentado from '../Monstros/Acorrentado.jpg'
 import MonstrosDataService from '../Services/MonstrosService.js';
 
 
@@ -43,11 +45,37 @@ function Monstros(){
                     {
                         !monstros.vitruviano_antigo ? '' :
                         <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                            <h1 style ={{paddingBottom:'30px', paddingTop:'30px', color: '#fff'}}>Vitruviano 01:</h1>
+                            <h1 style ={{paddingBottom:'30px', paddingTop:'30px', color: '#fff'}}>Vitruviano:</h1>
                             <div>
                                 <TransformWrapper defaultScale={1}>
                                     <TransformComponent>
                                         <img src={VitruvianoAntigo} alt="test" style={{width: '500px'}} />
+                                    </TransformComponent>
+                                </TransformWrapper>
+                            </div>
+                        </div>
+                    }
+                     {
+                        !monstros.acorrentado ? '' :
+                        <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                            <h1 style ={{paddingBottom:'30px', paddingTop:'30px', color: '#fff'}}>Vitruviano Acorrentado:</h1>
+                            <div>
+                                <TransformWrapper defaultScale={1}>
+                                    <TransformComponent>
+                                        <img src={Acorrentado} alt="test" style={{width: '500px'}} />
+                                    </TransformComponent>
+                                </TransformWrapper>
+                            </div>
+                        </div>
+                    }
+                    {
+                        !monstros.vitruviano_novo ? '' :
+                        <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                            <h1 style ={{paddingBottom:'30px', paddingTop:'30px', color: '#fff'}}>Vitruviano Perfeito:</h1>
+                            <div>
+                                <TransformWrapper defaultScale={1}>
+                                    <TransformComponent>
+                                        <img src={VitruvianoNovo} alt="test" />
                                     </TransformComponent>
                                 </TransformWrapper>
                             </div>

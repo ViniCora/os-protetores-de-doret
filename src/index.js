@@ -18,6 +18,7 @@ import Tarot from './TarotPagina/Tarot.js';
 import PersonagensNPC from './PersonagensNPC/PersonagensNPC.js';
 import TierList from './TierList/TierList';
 import ImagensItensSessao01 from './ImagensItens/ImagensItensSessao01';
+import ImagensItensSessao02 from './ImagensItens/ImagensItensSessao02';
 
 
 window.onload = function(){
@@ -42,6 +43,7 @@ window.onload = function(){
             <Route path="/Personagens" component={PersonagensNPC} exact />
             <Route path="/Tarot" component={Tarot} exact />
             <Route path="/ItensSessao01" component={ImagensItensSessao01} exact />
+            <Route path="/ItensSessao02" component={ImagensItensSessao02} exact />
             {dataPlayer == null ? '' :  dataPlayer.map((d, index) => {
 
               return (

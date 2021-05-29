@@ -10,8 +10,8 @@ function Atributos({id, Força, Destreza, Carisma, Inteligencia, Constituicao, P
             </div>
             <CardAtributos Atributo="Vida" Banco="vida" Value={Vida} id={id} Adicionar={Adicionar} 
                 setAdicionar={setAdicionar} nome={nome} imagePath={imagePath} vidaTotal={vidaTotal}></CardAtributos>
-            <CardAtributos Atributo="Sanidade" Banco="sanidade" Value={Sanidade} id={id} Adicionar={Adicionar} 
-            setAdicionar={setAdicionar} nome={nome} imagePath={imagePath} vidaTotal={vidaTotal} sanidadeMaxima={sanidadeMaxima}></CardAtributos>
+            <CardAtributos Atributo="Sanidade" Banco="sanidade" Value={sanidadeMaxima} id={id} Adicionar={Adicionar} 
+            setAdicionar={setAdicionar} nome={nome} imagePath={imagePath} vidaTotal={vidaTotal} sanidadeAtual={Sanidade}></CardAtributos>
             <CardAtributos Atributo="Iniciativa" Banco="" Value={Destreza} id={id} Adicionar={Adicionar}
                 setAdicionar={setAdicionar} nome={nome} imagePath={imagePath} vidaTotal={vidaTotal}></CardAtributos>
             <CardAtributos Atributo="Carisma" Banco="carisma" Value={Carisma} id={id} Adicionar={Adicionar} 

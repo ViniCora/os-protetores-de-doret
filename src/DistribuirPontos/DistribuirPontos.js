@@ -18,7 +18,9 @@ function DistribuirPontos(){
       const retrieveAtributes = () => {
         AtributesDataService.getPlayers()
         .then((response) => {
-    
+            
+        console.log(response.data)
+
         var data = response.data.sort((a,b) => {
           return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
         });

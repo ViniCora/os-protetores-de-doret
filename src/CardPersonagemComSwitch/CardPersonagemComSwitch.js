@@ -8,12 +8,12 @@ function CardPersonagemComSwitch({Atributes, playersParaAtualizar, setPlayersPar
         
             <div>
                 <img style={{width: '110px', height: '120px', paddingTop: '10px', paddingBottom: '5px', borderRadius: '50%'}}
-                 src={`https://os-sem-floresta-api.herokuapp.com/${Atributes.imagePath}`} 
+                 src={`https://rpg-image-api.herokuapp.com/${Atributes.imagePath}`} 
                 alt={Atributes.name} />
             </div>
 
             <div>
-                <h1 style={{paddingTop: '5px', paddingBottom: '10px', margin: '0px'}}>{Atributes.name}</h1>
+                <h1 style={{paddingTop: '5px', paddingBottom: '10px', margin: '0px'}}>{Atributes.nome}</h1>
             </div>
 
             <div style={{paddingTop: '5px', paddingBottom: '10px'}}>
@@ -31,7 +31,7 @@ function CardPersonagemComSwitch({Atributes, playersParaAtualizar, setPlayersPar
                                 setPlayersParaAtualizar(players);
                             }
                         }else{
-                            var index = playersParaAtualizar.findIndex(e => e.name === Atributes.name);
+                            var index = playersParaAtualizar.findIndex(e => e.name === Atributes.nome);
                             var players = playersParaAtualizar;
                             players.splice(index, 1);
                             setPlayerSwitch(false);

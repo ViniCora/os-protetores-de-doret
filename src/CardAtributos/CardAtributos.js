@@ -26,7 +26,7 @@ import IniciativaDataService from '../Services/IniciativaService.js';
 import RollsDataService from '../Services/RollsService.js';
 import './CardAtributos.css'
 
-function CardAtributos({Atributo, Banco, Value, id, Adicionar, setAdicionar, nome, imagePath, vidaTotal, sanidadeMaxima}){
+function CardAtributos({Atributo, Banco, Value, id, Adicionar, setAdicionar, nome, imagePath, vidaTotal, sanidadeAtual}){
     const customStyles = {
         content : {
           top                   : '25%',
@@ -42,6 +42,7 @@ function CardAtributos({Atributo, Banco, Value, id, Adicionar, setAdicionar, nom
         }
       };
 
+    const [sanidadeAt, setSanidadeAt] = useState(sanidadeAtual)
     const [vidaTot, setVidaTot] = useState(vidaTotal)
     const umQuinto = (Value/5).toFixed();
     const meio = (Value/2).toFixed();
@@ -258,7 +259,7 @@ function CardAtributos({Atributo, Banco, Value, id, Adicionar, setAdicionar, nom
                                     {Atributo === 'Iniciativa' ? 
                                         <button style={{backgroundColor: '#000', color: '#fff',fontSize: '20px', borderColor: '#fff', 
                                         borderRadius: '8px', borderStyle: 'solid', borderWidth: '2px'}} onClick={()=>{
-                                            window.open('https://os-protetores-de-doret-api.herokuapp.com/iniciativa');
+                                            window.open('https://os-protetores-de-doret.herokuapp.com/iniciativa');
                                             setIsOpen(false); setHasRoll(false); setModifier(0);
                                         }
                                         }>Ir para iniciativa</button>
@@ -345,14 +346,18 @@ function CardAtributos({Atributo, Banco, Value, id, Adicionar, setAdicionar, nom
                     isEditar ? 
                         <div>
                             <label style={{fontSize: '30px', paddingLeft:'10px'}}>{Atributo}: </label>
-                                <input value={valor} maxLength='3'
+                                <input value={Atributo == 'Vida'? valor : sanidadeAt} maxLength='3'
                                 style={{backgroundColor: '#696969', fontSize: '30px', maxWidth: '70px', maxHeight: '50px', marginBottom: '50px', borderStyle: 'none', 
                                 borderBottomColor: '#000', borderBottomWidth: '2px', borderBottomStyle: 'solid', boxShadow: '#696969'}} 
                                 type='number' onChange={(event)=>{
                                     var value = event.target.value;
 
-                                    if(value <= 100 && value >= -100){
+                                    if(value <= 100 && value >= -100 && Atributo === 'Vida'){
                                         setValor(value);
+                                    }else{
+                                        if(value <= 100 && value >= -100){
+                                            setSanidadeAt(value);
+                                        }
                                     }
 
                                 }}></input>
@@ -363,7 +368,7 @@ function CardAtributos({Atributo, Banco, Value, id, Adicionar, setAdicionar, nom
                         <label style={{fontSize: '30px', paddingLeft:'10px'}}>{`Vida: ${valor}/${vidaTot}`}</label>
                         : 
                         Atributo === 'Sanidade' ?
-                        <label style={{fontSize: '30px', paddingLeft:'10px'}}>{`Sanidade: ${valor}/${sanidadeMaxima}`}</label>
+                        <label style={{fontSize: '30px', paddingLeft:'10px'}}>{`Sanidade: ${sanidadeAt}/${valor}`}</label>
                         :
                             <label style={{fontSize: '30px', paddingLeft:'10px'}}>
                             {Atributo === 'Iniciativa' ? `Iniciativa` : `${Atributo}:`} { 
@@ -485,7 +490,7 @@ function CardAtributos({Atributo, Banco, Value, id, Adicionar, setAdicionar, nom
                             console.log(e);
                             });
                         }else{
-                            AtributesDataService.updateSanidade(id, {value: valor})
+                            AtributesDataService.updateSanidade(id, {value: sanidadeAt})
                             .then((response) => {
                                 console.log("Sanidade alterada com sucesso");
                             })

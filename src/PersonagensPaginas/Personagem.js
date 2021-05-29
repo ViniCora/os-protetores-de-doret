@@ -9,6 +9,7 @@ import d10 from '../Icons/d10.png'
 import d12 from '../Icons/d12.png'
 import d20 from '../Icons/d20.png'
 import Modal from 'react-modal';
+import Arma from '../Icons/Arma.png'
 
 function Personagem({Nome}){
     const customStyles = {
@@ -270,11 +271,33 @@ function Personagem({Nome}){
                         </div>
                     </div>
 
+                    <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
+                        <h1 style ={{paddingBottom:'0px', paddingTop: '40px', color: '#fff'}}>Armas:</h1>
+                    </div>
+
+                    <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', borderColor: '#fff', borderRadius: '8px', borderStyle: 'solid', borderWidth: '2px',
+                        paddingLeft: '10px', paddingRight: '10px', marginTop: '30px', marginBottom: '10px', backgroundColor: '#696969', height: '200', width: '500px'}}>  
+
+                        <div style={{display: 'flex', flexDirection: 'row', paddingTop: '10px'}}>
+                            <div style={{paddingLeft: '30px', paddingBottom: '10px'}}>
+                                <img style={{width: '75px', height: '75px'}}
+                                src={Arma} 
+                                alt='Arma' />
+                            </div>
+                        </div>
+
+
+                        <div style={{ paddingTop: '20px', paddingLeft: '50px'}}>
+                            <h1 style={{paddingTop: '5px', paddingBottom: '10px', margin: '0px'}}>{atributes.arma_dados}</h1>
+                        </div>
+
+                    </div>
+
                     <Atributos id={atributes._id} Força={atributes.força} Destreza={atributes.destreza} Carisma={atributes.carisma} Inteligencia={atributes.inteligencia} 
                         Constituicao={atributes.constituicao} Poder={atributes.poder} Sorte={atributes.sorte} Sanidade={atributes.sanidade} Mira={atributes.mira} 
                         Oficio={atributes.oficio} Percepcao={atributes.percepcao} Lutar={atributes.lutar} PrimeirosSocorros={atributes.primeiros_socorros}
                         Vida={atributes.vida} Adicionar={valueAdd} setAdicionar={setValueadd} nome={atributes.nome} imagePath={atributes.imagePath} 
-                        vidaTotal={atributes.vida_total} sanidadeMaxima={atributes.poder}></Atributos>
+                        vidaTotal={atributes.vida_total} sanidadeMaxima={atributes.sanidade_maxima}></Atributos>
                 </div>
             }
         </div>
