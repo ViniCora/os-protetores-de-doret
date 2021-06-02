@@ -100,6 +100,14 @@ const updateSanidadeMaxima = (id, data) => {
     return http.put(`/atributes/sanidadeMaxima/${id}`, data);
 }
 
+const updateArmas = (id, data) => {
+    return http.put(`/atributes/armas/${id}`, data);
+}
+
+const updateInventario = (id, data) => {
+    return http.put(`/atributes/inventario/${id}`, data);
+}
+
 export default { getAtributes, getPlayers, getPlayerImage, createPlayer, updateVida, updateMostrarTela, updatePontosAdicionar, 
-    updateForca, updateDestreza, updateCarisma, updateInteligencia, updateConstituicao, updateMira, updateOficio, updatePercepcao,
+    updateForca, updateDestreza, updateCarisma, updateInteligencia, updateConstituicao, updateMira, updateOficio, updatePercepcao, updateArmas, updateInventario,
     updatePoder, updateSorte, updateLutar, updatePrimeirosSocorros, updateSanidade, updateVidaTotal, updateMunicaoAtual, updateMunicaoMaxima, updateArmaDado, updateSanidadeMaxima};

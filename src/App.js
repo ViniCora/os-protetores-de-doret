@@ -22,6 +22,13 @@ function App() {
     retrieveAtributes();
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      retrieveAtributes();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   const retrievePoints = () => {
     ConstanteDataService.getConstante("tamanhoPagina")
     .then((response) => {
@@ -45,10 +52,10 @@ function App() {
     .then((response) => {
 
     var data = response.data.sort((a,b) => {
-      return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+      return a.nome < b.nome ? -1 : a.nome > b.nome ? 1 : 0;
     });
 
-    setPlayersAtribute(response.data);
+    setPlayersAtribute(data);
     })
     .catch((e) => {
     console.log(e);
@@ -59,13 +66,8 @@ function App() {
     <div className="App">
       <Header></Header>
       <body>
-        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-          <Link to={`/cadastrarPersonagem`}>
-            <h1 style ={{paddingTop:'20px', fontSize: '28px', color: '#696969', width: '400px'}}>Cadastre um novo Personagem</h1>
-          </Link>
-        </div>
         <div>
-          <h1 style ={{paddingTop:'20px', color: '#fff'}}>Escolha um personagem:</h1>
+          <h1 style ={{paddingTop:'20px', color: '#fff', color: '#fff', fontFamily: 'Baskerville'}}>Personagens:</h1>
         </div>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '50px'}}>
           <div style={{display: 'block' ,justifyContent: 'space-between', maxWidth: `${tamanhoPagina}%`}}>
@@ -75,7 +77,7 @@ function App() {
                 }
                 return (
                   <div style={{display: 'inline-flex', paddingLeft: '30px', marginBottom: '50px'}}>
-                    <Link style={{textDecoration: 'none'}} to={`/personagens/${player.nome.replace(/\s/g, '')}`}>
+                    <Link style={{textDecoration: 'none',  color: 'inherit' }} to={`/personagens/${player.nome.replace(/\s/g, '')}`}>
                       <CardPersonagem Atributes={player}></CardPersonagem>    
                     </Link>
                   </div>

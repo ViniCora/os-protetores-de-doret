@@ -33,10 +33,10 @@ function CardIniciativa({Rolls, Tamanho, setTamanho, Personagens}){
     const [contestação, setContestação] = useState(0);
 
     useEffect(() => {
-        if(Rolls.tipoDeSucesso !== 'Falha'){
-            setColor("#008000");
+        if(Rolls.tipoDeSucesso === 'Falha Normal' || Rolls.tipoDeSucesso === 'Falha Crítica'){
+            setColor("#DA3E52");
         }else{
-            setColor("#ff0000");
+            setColor("#90ee90");
         }
 
       });
@@ -104,7 +104,7 @@ function CardIniciativa({Rolls, Tamanho, setTamanho, Personagens}){
     }
 
     return(
-        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', borderColor: '#fff', borderRadius: '8px', borderStyle: 'solid', borderWidth: '2px',
+        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', borderColor: '#1C1C1C', borderRadius: '8px', borderStyle: 'solid', borderWidth: '2px',
             paddingLeft: '10px', paddingRight: '10px', marginTop: '20px', marginBottom: '50px', backgroundColor: color, height: '300', width: '75%'}}>  
 
             <Modal
@@ -186,21 +186,19 @@ function CardIniciativa({Rolls, Tamanho, setTamanho, Personagens}){
                 alt={Rolls.name} />
             </div>
 
-            <div style={{ paddingTop: '30px'}}>
-                <h1 style={{paddingTop: '5px', paddingBottom: '10px', margin: '0px'}}>{Rolls.nome}</h1>
-            </div>
+            <div style={{display: 'flex', flexDirection: 'row'}}>
+                <div style={{ paddingTop: '30px'}}>
+                    <h1 style={{paddingTop: '5px', paddingBottom: '10px', margin: '0px', color: '#fff', fontFamily: 'Baskerville'}}>{Rolls.nome}</h1>
+                </div>
 
-            <div style={{ paddingTop: '5px', paddingBottom: '5px'}}>
-                <h1 style={{paddingTop:'5px', paddingBottom: '10px', margin: '0px'}}>{`${Rolls.atributo}: ${Rolls.valorRodado}`}</h1>
-                <h1 style={{paddingTop: '5px', paddingBottom: '10px', margin: '0px'}}>{`Tipo de Sucesso: ${Rolls.tipoDeSucesso}`}</h1>
+                <div style={{ paddingTop: '5px', paddingBottom: '5px', paddingLeft: '50px'}}>
+                    <h1 style={{paddingTop:'5px', paddingBottom: '10px', margin: '0px', color: '#fff', fontFamily: 'Baskerville'}}>{`${Rolls.atributo}: ${Rolls.valorRodado}`}</h1>
+                    <h1 style={{paddingTop: '5px', paddingBottom: '10px', margin: '0px',color: '#fff', fontFamily: 'Baskerville'}}>{`Tipo de Sucesso: ${Rolls.tipoDeSucesso}`}</h1>
+                </div>
             </div>
             
             
-            <div style={{ paddingTop: '40px'}}>
-                <input style={{paddingRight: '10px'}} type='image' src={dados} alt='row' width="40px" height="40px" onClick={()=>{
-                       setIsOpen(true);
-                 }
-                }/> 
+            <div style={{ paddingTop: '40px', paddingRight: '20px'}}>
                 <input type='image' src={lixo} alt='row' width="40px" height="40px" onClick={()=>{
                     deletarRoll(Rolls._id);
                     var tam = Tamanho - 1;

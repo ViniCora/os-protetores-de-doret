@@ -72,8 +72,8 @@ function Iniciativa(){
         <div>
             <Header></Header>
             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                <h1 style ={{paddingTop:'20px', color: '#fff'}}>Rolls</h1>
-                <h1 style ={{paddingTop:'20px', color: '#ff0000', cursor: 'pointer'}} onClick={()=>{
+                <h1 style ={{paddingTop:'20px', color: '#fff', fontFamily: 'Baskerville'}}>Rolls</h1>
+                <h1 style ={{paddingTop:'20px', color: '#DA3E52', fontFamily: 'Baskerville',cursor: 'pointer'}} onClick={()=>{
                      RollsDataService.deleteAll()
                      .then((response) => {
                          console.log("Rolls deletados com sucesso.");

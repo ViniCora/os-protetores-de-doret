@@ -21,7 +21,7 @@ function Mestre(){
       }, []);
 
       const retrieveValorSessao = () => {
-        ConstanteDataService.getConstante("arco2_total")
+        ConstanteDataService.getConstante("arco1_total")
         .then((response) => {
             setValorSessao(response.data[0].value);
         })
@@ -31,7 +31,7 @@ function Mestre(){
       }
       
       const attValorSessao = (value) => {
-        ConstanteDataService.updateConstante("arco2_total", {value: value})
+        ConstanteDataService.updateConstante("arco1_total", {value: value})
         .then((response) => {
             console.log("Sessão atual alterada com sucesso");
         })
@@ -80,28 +80,28 @@ function Mestre(){
                 <h1 style ={{paddingTop:'20px', color: '#fff'}}>Página do Mestre:</h1>
             </div>
             <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
-                <Link to={`/cadastrarPersonagem`}>
+                <Link style={{textDecoration: 'none',  color: 'inherit' }} to={`/cadastrarPersonagem`}>
                     <h1 style ={{paddingTop:'5px', color: '#696969', cursor: 'pointer'}}>{`->CadastrarPlayer<-`}</h1>
                 </Link>
-                <Link to={`/cadastrarNPC`}>
+                <Link style={{textDecoration: 'none',  color: 'inherit' }} to={`/cadastrarNPC`}>
                     <h1 style ={{paddingTop:'5px', color: '#696969', cursor: 'pointer'}}>{`->CadastrarNPC<-`}</h1>
                 </Link>
-                <Link to={`/distribuirPontos`}>
+                <Link style={{textDecoration: 'none',  color: 'inherit' }} to={`/distribuirPontos`}>
                     <h1 style ={{paddingTop:'5px', color: '#696969', cursor: 'pointer'}}>{`->Distribuir Pontos<-`}</h1>
                 </Link>
-                <Link to={`/rolls`}>
+                <Link style={{textDecoration: 'none',  color: 'inherit' }} to={`/rolls`}>
                     <h1 style ={{paddingTop:'5px', color: '#696969', cursor: 'pointer'}}>{`->Rolls<-`}</h1>
                 </Link>
 
             </div>
             <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
-                <Link to={`/ItensSessao01`}>
+                <Link style={{textDecoration: 'none',  color: 'inherit' }} to={`/ItensSessao01`}>
                     <h1 style ={{paddingTop:'5px', color: '#696969', cursor: 'pointer'}}>{`->Itens Sessão 01<-`}</h1>
                 </Link>
-                <Link to={`/Personagens`}>
+                <Link style={{textDecoration: 'none',  color: 'inherit' }} to={`/Personagens`}>
                     <h1 style ={{paddingTop:'5px', color: '#696969', cursor: 'pointer'}}>{`->NPCs<-`}</h1>
                 </Link>
-                <Link to={`/Monstros`}>
+                <Link style={{textDecoration: 'none',  color: 'inherit' }} to={`/Monstros`}>
                     <h1 style ={{paddingTop:'5px', color: '#696969', cursor: 'pointer'}}>{`->Monstros<-`}</h1>
                 </Link>
 
@@ -136,7 +136,7 @@ function Mestre(){
             </div>
             <div style={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', paddingTop: '50px'}}>
                 <div style={{display: 'flex', flexDirection: 'row', alignContent: 'center', justifyContent: 'center'}}>
-                    <div style={{display: 'block', alignContent: 'center', justifyContent: 'space-evenly', maxWidth: `80%`, marginLeft: '14%', marginRight: '6%'}}>
+                    <div style={{display: 'block', alignContent: 'center', justifyContent: 'space-evenly', maxWidth: `80%`}}>
                         {playersAtribute == null ? 'Carregando' :  playersAtribute.map((player, index) => {
                             if(!player.mostrar_tela){
                             return;
@@ -155,7 +155,7 @@ function Mestre(){
             <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
                 <h1 style ={{paddingTop:'20px', color: '#fff'}}>NPCs:</h1>
             </div>
-            {/* <div style={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', paddingTop: '50px'}}>
+            { <div style={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', paddingTop: '50px'}}>
                 <div style={{display: 'flex', flexDirection: 'row', alignContent: 'center', justifyContent: 'center'}}>
                     <div style={{display: 'block', alignContent: 'center', justifyContent: 'space-evenly', maxWidth: `80%`, marginLeft: '14%', marginRight: '6%'}}>
                         {NPCAtribute == null ? 'Carregando' :  NPCAtribute.map((NPC, index) => {
@@ -170,7 +170,7 @@ function Mestre(){
                         })}
                     </div>
                 </div>
-            </div> */}
+            </div> }
         </div>
     );
 };

@@ -34,8 +34,8 @@ function CardAtributos({Atributo, Banco, Value, id, Adicionar, setAdicionar, nom
           marginRight           : '-50%',
           width                 : '40%',
           height                : '50%',
-          backgroundColor       : '#696969',
-          borderColor           : '#000', 
+          backgroundColor       : '#363636',
+          borderColor           : '#1C1C1C', 
           borderRadius          : '8px', 
           borderStyle           : 'solid', 
           borderWidth           : '2px',
@@ -227,8 +227,8 @@ function CardAtributos({Atributo, Banco, Value, id, Adicionar, setAdicionar, nom
  
     return(
         
-        <div style={{width:'750px', borderColor: '#fff', borderRadius: '8px', borderStyle: 'solid', borderWidth: '2px', 
-        marginBottom: '50px', padding: '10px', maxHeight: '50px', backgroundColor:'#696969', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+        <div style={{width:'750px', borderColor: '#1C1C1C', borderRadius: '8px', borderStyle: 'solid', borderWidth: '2px', 
+        marginBottom: '50px', padding: '10px', maxHeight: '50px', backgroundColor:'#363636', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
             <Modal
               isOpen={modalIsOpen}
               onRequestClose={()=>{setIsOpen(false); setHasRoll(false); setModifier(0);}}
@@ -236,7 +236,7 @@ function CardAtributos({Atributo, Banco, Value, id, Adicionar, setAdicionar, nom
               contentLabel="Example Modal"
             >
                 <div style={{display:'flex', flexDirection: 'column', alignItems: 'center', borderBottomColor: '#000', borderBottomWidth: '2px', borderBottomStyle: 'solid'}}>
-                    <h2 style={{fontSize:'30px'}}>Teste de {Atributo}</h2>
+                    <h2 style={{fontSize:'30px', color: '#fff', fontFamily: 'Baskerville'}}>Teste de {Atributo}</h2>
                 </div>
                 {hasRoll ? 
                             <div>
@@ -244,7 +244,7 @@ function CardAtributos({Atributo, Banco, Value, id, Adicionar, setAdicionar, nom
                                     <div style={{width: '75%', height: '200px', borderColor: '#fff', 
                                         borderRadius: '8px', borderStyle: 'solid', borderWidth: '2px', display: 'flex', 
                                         flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between'}}>
-                                            <h2 style={{ fontSize: '20px', marginTop: '20px'}}>{
+                                            <h2 style={{ fontSize: '20px', marginTop: '20px', color: '#fff', fontFamily: 'Baskerville'}}>{
                                                 roll === 1 ? 'Sucesso Crítico, rodou: ' + roll :  
                                                 roll === 100 ? 'Falha Crítica, rodou: ' + roll :
                                                 (roll > 1 && roll <= umQuinto) ? 'Sucesso Extremo, rodou: ' + roll + '.' : 
@@ -252,7 +252,8 @@ function CardAtributos({Atributo, Banco, Value, id, Adicionar, setAdicionar, nom
                                                 (roll > meio && roll <= valorMinimo) ? 'Sucesso Normal, rodou: ' + roll +'.' : 
                                                 'Falhou, rodou: ' + roll + '.'
                                             }</h2>
-                                            <h2 style={{ fontSize: '20px', marginBottom: '20px'}}>{`Valor minimo para sucesso era: ${valorMinimo}.`}</h2>
+                                            <h2 style={{ fontSize: '20px', marginBottom: '20px', color: '#fff', fontFamily: 'Baskerville'}}>
+                                                {`Valor minimo para sucesso era: ${valorMinimo}.`}</h2>
                                     </div>
                                 </div>
                                 <div style={{display:'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: '50px'}}>
@@ -345,7 +346,7 @@ function CardAtributos({Atributo, Banco, Value, id, Adicionar, setAdicionar, nom
                 {
                     isEditar ? 
                         <div>
-                            <label style={{fontSize: '30px', paddingLeft:'10px'}}>{Atributo}: </label>
+                            <label style={{fontSize: '30px', paddingLeft:'10px', color: '#fff', fontFamily: 'Baskerville'}}>{Atributo}: </label>
                                 <input value={Atributo == 'Vida'? valor : sanidadeAt} maxLength='3'
                                 style={{backgroundColor: '#696969', fontSize: '30px', maxWidth: '70px', maxHeight: '50px', marginBottom: '50px', borderStyle: 'none', 
                                 borderBottomColor: '#000', borderBottomWidth: '2px', borderBottomStyle: 'solid', boxShadow: '#696969'}} 
@@ -365,12 +366,12 @@ function CardAtributos({Atributo, Banco, Value, id, Adicionar, setAdicionar, nom
                         </div>
                     : 
                         Atributo === 'Vida' ? 
-                        <label style={{fontSize: '30px', paddingLeft:'10px'}}>{`Vida: ${valor}/${vidaTot}`}</label>
+                        <label style={{fontSize: '30px', paddingLeft:'10px', color: '#fff', fontFamily: 'Baskerville'}}>{`Vida: ${valor}/${vidaTot}`}</label>
                         : 
                         Atributo === 'Sanidade' ?
-                        <label style={{fontSize: '30px', paddingLeft:'10px'}}>{`Sanidade: ${sanidadeAt}/${valor}`}</label>
+                        <label style={{fontSize: '30px', paddingLeft:'10px', color: '#fff', fontFamily: 'Baskerville'}}>{`Sanidade: ${sanidadeAt}/${valor}`}</label>
                         :
-                            <label style={{fontSize: '30px', paddingLeft:'10px'}}>
+                            <label style={{fontSize: '30px', paddingLeft:'10px', color: '#fff', fontFamily: 'Baskerville'}}>
                             {Atributo === 'Iniciativa' ? `Iniciativa` : `${Atributo}:`} { 
                             Atributo === 'Iniciativa' ? '' : valor}</label>
                         
@@ -428,7 +429,7 @@ function CardAtributos({Atributo, Banco, Value, id, Adicionar, setAdicionar, nom
                                     if(newRoll > meio && newRoll <= valorMinimo){
                                         tipoDeSucesso = "Sucesso Normal";
                                     }else{
-                                        tipoDeSucesso = "Falha";
+                                        tipoDeSucesso = "Falha Normal";
                                     }
 
                                     salvarRoll(newRoll, tipoDeSucesso);

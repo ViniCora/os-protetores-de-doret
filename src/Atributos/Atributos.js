@@ -6,7 +6,7 @@ function Atributos({id, Força, Destreza, Carisma, Inteligencia, Constituicao, P
     return(
         <div>
             <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
-                <h1 style ={{paddingBottom:'20px', paddingTop:'20px', color: '#fff'}}>Atributos:</h1>
+                <h1 style ={{paddingBottom:'20px', paddingTop:'20px', color: '#fff', color: '#fff', fontFamily: 'Baskerville'}}>Atributos:</h1>
             </div>
             <CardAtributos Atributo="Vida" Banco="vida" Value={Vida} id={id} Adicionar={Adicionar} 
                 setAdicionar={setAdicionar} nome={nome} imagePath={imagePath} vidaTotal={vidaTotal}></CardAtributos>
@@ -29,7 +29,7 @@ function Atributos({id, Força, Destreza, Carisma, Inteligencia, Constituicao, P
             <CardAtributos Atributo="Sorte" Banco="sorte" Value={Sorte} id={id} Adicionar={Adicionar} 
                 setAdicionar={setAdicionar} nome={nome} imagePath={imagePath} vidaTotal={vidaTotal}></CardAtributos>
             <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
-                <h1 style ={{paddingBottom:'20px', color: '#fff'}}>Perícias:</h1>
+                <h1 style ={{paddingBottom:'20px', color: '#fff', color: '#fff', fontFamily: 'Baskerville'}}>Perícias:</h1>
             </div>
             <CardAtributos Atributo="Lutar/Briga" Banco="lutar" Value={Lutar} id={id} Adicionar={Adicionar} 
                 setAdicionar={setAdicionar} nome={nome} imagePath={imagePath} vidaTotal={vidaTotal}></CardAtributos>

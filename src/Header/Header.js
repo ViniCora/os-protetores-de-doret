@@ -25,10 +25,10 @@ function Header(){
         <header className="Header">
           <div style={{display: 'flex', flexDirection:'column', alignItems: 'center'}}>
           <Link style={{textDecoration: 'none'}} to="/">
-            <p style ={{color: '#fff', marginBottom: '10px'}}>{`OS PROTETORES DE DORET`}</p>
+            <p style ={{color: '#fff', marginBottom: '10px', color: '#fff', fontFamily: 'Baskerville'}}>{`OS PROTETORES DE DORET`}</p>
           </Link>
           <Link style={{textDecoration: 'none'}} to="/">
-            <p style ={{color: '#fff',  marginBottom: '10px'}}>{`ARCO 1: SESSÃO ${totalArco1.value}`}</p>
+            <p style ={{color: '#fff',  marginBottom: '10px', color: '#fff', fontFamily: 'Baskerville'}}>{`ARCO 1: SESSÃO ${totalArco1.value}`}</p>
           </Link>
           </div>
         </header>
