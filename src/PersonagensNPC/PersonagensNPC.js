@@ -7,6 +7,7 @@ import RobertoPinheiro from '../NPC/Roberto Pinheiro.jpg'
 import GeraldoBonfim from '../NPC/Geraldo Bonfim.jpg'
 import AmeliaLeitao  from '../NPC/AmeliaLeitao.png'
 import VandaLeitao from '../NPC/Vanda Leitão.jpg'
+import DanielSanches  from '../NPC/DanielSanches.png'
 import PersonagensDataService from '../Services/PersonagensService.js';
 
 function PersonagensNPC(){
@@ -117,6 +118,19 @@ function PersonagensNPC(){
                                 <TransformWrapper defaultScale={1}>
                                     <TransformComponent>
                                         <img src={VandaLeitao} alt="test" />
+                                    </TransformComponent>
+                                </TransformWrapper>
+                            </div>
+                        </div>
+                    }
+                    {
+                        !personagens.daniel_sanches ? '' :
+                        <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                            <h1 style ={{paddingBottom:'30px', paddingTop:'30px', color: '#fff'}}>Daniel Sanches:</h1>
+                            <div>
+                                <TransformWrapper defaultScale={1}>
+                                    <TransformComponent>
+                                        <img src={DanielSanches} alt="test" />
                                     </TransformComponent>
                                 </TransformWrapper>
                             </div>

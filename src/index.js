@@ -19,7 +19,7 @@ import PersonagensNPC from './PersonagensNPC/PersonagensNPC.js';
 import TierList from './TierList/TierList';
 import ImagensItensSessao01 from './ImagensItens/ImagensItensSessao01';
 import ImagensItensSessao02 from './ImagensItens/ImagensItensSessao02';
-
+import ImagensItensSessao03 from './ImagensItens/ImagensItensSessao03';
 
 window.onload = function(){
   AtributesDataService.getPlayers()
@@ -44,6 +44,7 @@ window.onload = function(){
             <Route path="/Tarot" component={Tarot} exact />
             <Route path="/ItensSessao01" component={ImagensItensSessao01} exact />
             <Route path="/ItensSessao02" component={ImagensItensSessao02} exact />
+            <Route path="/ItensSessao03" component={ImagensItensSessao03} exact />
             {dataPlayer == null ? '' :  dataPlayer.map((d, index) => {
 
               return (
