@@ -220,6 +220,15 @@ function CardAtributos({Atributo, Banco, Value, id, Adicionar, setAdicionar, nom
                 console.log(e);
                 });
               break;
+              case 'sanidade':
+                AtributesDataService.updateSanidadeMaxima(id, {value: newValue})
+                .then((response) => {
+                    console.log("Primeiros Socorros alterado com sucesso");
+                })
+                .catch((e) => {
+                console.log(e);
+                });
+              break;
             default:
               console.log(`Sorry, we are out of ${Banco}.`);
           }
@@ -510,7 +519,7 @@ function CardAtributos({Atributo, Banco, Value, id, Adicionar, setAdicionar, nom
                 }
 
                 {
-                    (( Atributo === 'Iniciativa' || Atributo === 'Sanidade')) ? '' :
+                    (( Atributo === 'Iniciativa' || isEditar)) ? '' :
                     (isEditar && Atributo === 'Vida') ? '' :
                     <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
                         <div style={{paddingRight: '10px'}}>
@@ -519,7 +528,11 @@ function CardAtributos({Atributo, Banco, Value, id, Adicionar, setAdicionar, nom
                                     var newValue = vidaTot - 1;
                                     setVidaTot(newValue);
                                     alterarValorBanco(newValue);
-                                }else{
+                                }else if(Atributo === 'Sanidade'){
+                                    var newValue = valor - 1;
+                                    setValor(newValue);
+                                    alterarValorBanco(newValue);
+                                } else{
                                     var newValue = valor - 1;
                                     setValor(newValue);
                                     alterarValorBanco(newValue);
@@ -535,6 +548,19 @@ function CardAtributos({Atributo, Banco, Value, id, Adicionar, setAdicionar, nom
                                 if(Atributo === 'Vida'){
                                     var newValue = vidaTot + 1;
                                     setVidaTot(newValue);
+                                    alterarValorBanco(newValue);
+                                }else if(Atributo === 'Sanidade'){
+                                    var newValue = valor + 1;
+                                    setValor(newValue);
+                                    var newSanidade = sanidadeAt + 1;
+                                    setSanidadeAt(newSanidade);
+                                    AtributesDataService.updateSanidade(id, {value: newSanidade})
+                                    .then((response) => {
+                                        console.log("Sanidade alterada com sucesso");
+                                    })
+                                    .catch((e) => {
+                                    console.log(e);
+                                    });
                                     alterarValorBanco(newValue);
                                 }else{
                                     if(Adicionar > 0){
