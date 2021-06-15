@@ -456,7 +456,7 @@ function Personagem({Nome}){
                         </div>
                         <div style={{width: '100%', height: '70%', paddingTop: '10px'}}>
                             <textarea  value={inventario} placeholder='Seu Inventário' 
-                            style={{backgroundColor: '#363636', fontSize: '20px', borderRadius: '8px',
+                            style={{backgroundColor: '#363636', fontSize: '20px', borderRadius: '8px', color: '#ffffff',
                             borderColor: '#000', borderWidth: '2px', borderStyle: 'solid', width: '100%', height: '100%',
                             boxShadow: '#363636'}}  onChange={(event)=>{
                                 var value = event.target.value;

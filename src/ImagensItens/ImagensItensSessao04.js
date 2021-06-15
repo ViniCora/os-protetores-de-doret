@@ -99,7 +99,7 @@ function ImagensItensSessao04(){
                             </TransformWrapper>
                         </div>
                         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
-                            <h1 style ={{paddingBottom:'20px', paddingTop:'20px', color: '#fff'}}>Simbolos pedras esquerda: </h1>
+                            <h1 style ={{paddingBottom:'20px', paddingTop:'20px', color: '#fff'}}>Simbolos pedras direita: </h1>
                         </div>
                         <div style={{paddingBottom: '20px'}}>
                         { !itens.sabedoria ? '' :
@@ -153,7 +153,7 @@ function ImagensItensSessao04(){
                             </TransformWrapper>
                         </div>
                         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
-                            <h1 style ={{paddingBottom:'20px', paddingTop:'20px', color: '#fff'}}>Simbolos pedras direita: </h1>
+                            <h1 style ={{paddingBottom:'20px', paddingTop:'20px', color: '#fff'}}>Simbolos pedras esquerda: </h1>
                         </div>
                         <div style={{paddingBottom: '20px'}}>
                         { !itens.elementos ? '' :

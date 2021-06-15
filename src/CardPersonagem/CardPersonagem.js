@@ -8,18 +8,19 @@ function CardPersonagem({Atributes}){
         
             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
                 <div style={{paddingTop: '15px',cursor: 'pointer'}}>
-                    <img style={{width: '110px', height: '120px', paddingTop: '0px', paddingBottom: '0px', borderRadius: '50%'}}
+                    <img style={{width: '100px', height: '100px', paddingTop: '0px', paddingBottom: '0px', borderRadius: '50%'}}
                     src={`https://rpg-image-api.herokuapp.com/${Atributes.imagePath}`} 
                     alt={Atributes.name} />
                 </div>
-                <label style={{fontSize: '25px', color: '#ffffff', paddingTop: '20px', fontFamily: 'Baskerville', cursor: 'pointer'}}>{Atributes.nome}</label>
+                <label style={{fontSize: '25px', color: '#ffffff', paddingTop: '15px', fontFamily: 'Baskerville', cursor: 'pointer'}}>{Atributes.nome}</label>
             </div>
 
             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', cursor: 'pointer'}}>
-                <label style={{fontSize: '25px', color: '#ffffff', paddingTop: '20px', fontFamily: 'Baskerville', cursor: 'pointer'}}>Vida:</label>
-                <label style={{fontSize: '27px', color: '#DA3E52', paddingTop: '10px', fontFamily: 'Baskerville', cursor: 'pointer'}}>{`${Atributes.vida}/${Atributes.vida_total}`}</label>
-                <label style={{fontSize: '25px', color: '#ffffff', paddingTop: '10px', fontFamily: 'Baskerville', cursor: 'pointer'}}>Sanidade:</label>
-                <label style={{fontSize: '27px', color: '#A3D9FF', paddingTop: '10px', cursor: 'pointer',
+                <label style={{fontSize: '27px', color: '#ffffff', paddingTop: '15px', fontFamily: 'Baskerville', cursor: 'pointer'}}>Vida:</label>
+                <label style={{fontSize: '35px', color: '#DA3E52', paddingTop: '8px', fontFamily: 'Baskerville', cursor: 'pointer', fontStyle: 'bold'}}>
+                    {`${Atributes.vida}/${Atributes.vida_total}`}</label>
+                <label style={{fontSize: '27px', color: '#ffffff', paddingTop: '8px', fontFamily: 'Baskerville', cursor: 'pointer'}}>Sanidade:</label>
+                <label style={{fontSize: '35px', color: '#A3D9FF', fontStyle: 'bold', paddingTop: '8px', cursor: 'pointer',
                 paddingBottom: '20px', fontFamily: 'Baskerville'}}>{`${Atributes.sanidade}/${Atributes.sanidade_maxima}`}</label>
             </div>
 
