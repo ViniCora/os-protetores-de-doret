@@ -63,7 +63,7 @@ function TelaCardsOverlay() {
       <Header></Header>
       <body>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '50px'}}>
-          <div style={{display: 'block' ,justifyContent: 'space-between', maxWidth: `${tamanhoPagina}%`}}>
+          <div style={{display: 'block' ,justifyContent: 'space-between', maxWidth: `100%`}}>
               {playersAtribute == null ? 'Carregando' :  playersAtribute.map((player, index) => {
                 if(!player.mostrar_tela){
                   return;
