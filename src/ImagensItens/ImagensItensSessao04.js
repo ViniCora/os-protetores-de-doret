@@ -247,80 +247,8 @@ function ImagensItensSessao04(){
                                     </TransformWrapper>
                                 </div>
                             </div>
-                            <div>
-                                { !itens.a_verdadeira_chave_cp_01 ? '' :
-                                    <div>
-                                        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
-                                            <h1 style ={{paddingBottom:'20px', paddingTop:'20px', color: '#fff'}}>Capítulo 01: </h1>
-                                        </div>
-                                        <div>
-                                            <TransformWrapper>
-                                                <TransformComponent>
-                                                    <img src={OsCaminhosDaSabedoriaECoragem} alt="test" />
-                                                </TransformComponent>
-                                            </TransformWrapper>
-                                        </div>
-                                    </div>
-                                }
-                            </div>
                         </div>
                         
-                }
-                { !itens.a_chave_de_salomão ? '' :
-                    <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
-                            <h1 style ={{paddingBottom:'20px', paddingTop:'20px', color: '#fff'}}>A Chave De Salomão: </h1>
-                        </div>
-                        <div>
-                            <TransformWrapper>
-                                <TransformComponent>
-                                    <img src={AChaveDeSalomao} alt="test" style={{width:'50%'}} />
-                                </TransformComponent>
-                            </TransformWrapper>
-                        </div>
-                    </div>
-                }
-                { !itens.dica_01 ? '' :
-                    <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
-                            <h1 style ={{paddingBottom:'20px', paddingTop:'20px', color: '#fff'}}>Folha de papel: </h1>
-                        </div>
-                        <div>
-                            <TransformWrapper>
-                                <TransformComponent>
-                                    <img src={Dica01} alt="test" style={{width:'75%'}} />
-                                </TransformComponent>
-                            </TransformWrapper>
-                        </div>
-                    </div>
-                }
-                { !itens.dica_02 ? '' :
-                    <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
-                            <h1 style ={{paddingBottom:'20px', paddingTop:'20px', color: '#fff'}}>Dica: </h1>
-                        </div>
-                        <div>
-                            <TransformWrapper>
-                                <TransformComponent>
-                                    <img src={Dica02} alt="test" style={{width:'75%'}} />
-                                </TransformComponent>
-                            </TransformWrapper>
-                        </div>
-                    </div>
-                }
-                { !itens.dica_03 ? '' :
-                    <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
-                            <h1 style ={{paddingBottom:'20px', paddingTop:'20px', color: '#fff'}}>Dica: </h1>
-                        </div>
-                        <div>
-                            <TransformWrapper>
-                                <TransformComponent>
-                                    <img src={Dica03} alt="test" style={{width:'75%'}} />
-                                </TransformComponent>
-                            </TransformWrapper>
-                        </div>
-                    </div>
                 }
                 </div>
 
