@@ -8,6 +8,12 @@ import GeraldoBonfim from '../NPC/Geraldo Bonfim.jpg'
 import AmeliaLeitao  from '../NPC/AmeliaLeitao.png'
 import VandaLeitao from '../NPC/Vanda Leitão.jpg'
 import DanielSanches  from '../NPC/DanielSanches.png'
+import Carmen from '../NPC/Carmen.jpg';
+import EduardoAlencar from '../NPC/Eduardo Alencar.jpg';
+import JorgeGarcia from '../NPC/Jorge Garcia.jpg';
+import Nelton from '../NPC/Nelton.jpg';
+import PadreRicardo from '../NPC/PadreRicardo.jpg';
+import Violinista from '../NPC/Violinista.jpg';
 import PersonagensDataService from '../Services/PersonagensService.js';
 
 function PersonagensNPC(){
@@ -131,6 +137,84 @@ function PersonagensNPC(){
                                 <TransformWrapper defaultScale={1}>
                                     <TransformComponent>
                                         <img src={DanielSanches} alt="test" />
+                                    </TransformComponent>
+                                </TransformWrapper>
+                            </div>
+                        </div>
+                    }
+                    {
+                        !personagens.violinista ? '' :
+                        <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                            <h1 style ={{paddingBottom:'30px', paddingTop:'30px', color: '#fff'}}>Violinista:</h1>
+                            <div>
+                                <TransformWrapper defaultScale={1}>
+                                    <TransformComponent>
+                                        <img src={Violinista} alt="test" />
+                                    </TransformComponent>
+                                </TransformWrapper>
+                            </div>
+                        </div>
+                    }
+                    {
+                        !personagens.padre_ricardo ? '' :
+                        <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                            <h1 style ={{paddingBottom:'30px', paddingTop:'30px', color: '#fff'}}>Padre Ricardo:</h1>
+                            <div>
+                                <TransformWrapper defaultScale={1}>
+                                    <TransformComponent>
+                                        <img src={PadreRicardo} alt="test" />
+                                    </TransformComponent>
+                                </TransformWrapper>
+                            </div>
+                        </div>
+                    }
+                    {
+                        !personagens.eduardo_alencar ? '' :
+                        <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                            <h1 style ={{paddingBottom:'30px', paddingTop:'30px', color: '#fff'}}>Eduardo Alencar:</h1>
+                            <div>
+                                <TransformWrapper defaultScale={1}>
+                                    <TransformComponent>
+                                        <img src={EduardoAlencar} alt="test" />
+                                    </TransformComponent>
+                                </TransformWrapper>
+                            </div>
+                        </div>
+                    }
+                    {
+                        !personagens.jorge_garcia ? '' :
+                        <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                            <h1 style ={{paddingBottom:'30px', paddingTop:'30px', color: '#fff'}}>Jorge Garcia:</h1>
+                            <div>
+                                <TransformWrapper defaultScale={1}>
+                                    <TransformComponent>
+                                        <img src={JorgeGarcia} alt="test" />
+                                    </TransformComponent>
+                                </TransformWrapper>
+                            </div>
+                        </div>
+                    }
+                    {
+                        !personagens.nelton ? '' :
+                        <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                            <h1 style ={{paddingBottom:'30px', paddingTop:'30px', color: '#fff'}}>Nelton Nowak:</h1>
+                            <div>
+                                <TransformWrapper defaultScale={1}>
+                                    <TransformComponent>
+                                        <img src={Nelton} alt="test" />
+                                    </TransformComponent>
+                                </TransformWrapper>
+                            </div>
+                        </div>
+                    }
+                    {
+                        !personagens.carmen ? '' :
+                        <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                            <h1 style ={{paddingBottom:'30px', paddingTop:'30px', color: '#fff'}}>Carmen Ramirez Porto:</h1>
+                            <div>
+                                <TransformWrapper defaultScale={1}>
+                                    <TransformComponent>
+                                        <img src={Carmen} alt="test" />
                                     </TransformComponent>
                                 </TransformWrapper>
                             </div>

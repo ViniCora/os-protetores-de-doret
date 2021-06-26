@@ -3,7 +3,8 @@ import Header from '../Header/Header.js';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import VitruvianoAntigo from '../Monstros/VitruvianoAntigo.png';
 import VitruvianoNovo from '../Monstros/VitruvianoNovo.png';
-import Acorrentado from '../Monstros/Acorrentado.jpg'
+import Acorrentado from '../Monstros/Acorrentado.jpg';
+import MonstroSalomonis from '../Monstros/MonstroSalomonis.png';
 import MonstrosDataService from '../Services/MonstrosService.js';
 
 
@@ -76,6 +77,19 @@ function Monstros(){
                                 <TransformWrapper defaultScale={1}>
                                     <TransformComponent>
                                         <img src={VitruvianoNovo} alt="test" />
+                                    </TransformComponent>
+                                </TransformWrapper>
+                            </div>
+                        </div>
+                    }
+                    {
+                        !monstros.falha_salomao ? '' :
+                        <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                            <h1 style ={{paddingBottom:'30px', paddingTop:'30px', color: '#fff'}}>Salomão Falso:</h1>
+                            <div>
+                                <TransformWrapper defaultScale={1}>
+                                    <TransformComponent>
+                                        <img src={MonstroSalomonis} alt="test" />
                                     </TransformComponent>
                                 </TransformWrapper>
                             </div>

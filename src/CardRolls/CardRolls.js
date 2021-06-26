@@ -33,12 +33,15 @@ function CardIniciativa({Rolls, Tamanho, setTamanho, Personagens}){
     const [contestação, setContestação] = useState(0);
 
     useEffect(() => {
-        if(Rolls.tipoDeSucesso === 'Falha Normal' || Rolls.tipoDeSucesso === 'Falha Crítica'){
-            setColor("#DA3E52");
+        if(Rolls.atributo === "d4" || Rolls.atributo === "d6" || Rolls.atributo === "d8" || Rolls.atributo === "d10" || Rolls.atributo === "d12" || Rolls.atributo === "d20"){
+            setColor("#363636");
         }else{
-            setColor("#90ee90");
+            if(Rolls.tipoDeSucesso === 'Falha Normal' || Rolls.tipoDeSucesso === 'Falha Crítica'){
+                setColor("#DA3E52");
+            }else{
+                setColor("#90ee90");
+            }
         }
-
       });
 
       useEffect(() => {
@@ -190,11 +193,20 @@ function CardIniciativa({Rolls, Tamanho, setTamanho, Personagens}){
                 <div style={{ paddingTop: '30px'}}>
                     <h1 style={{paddingTop: '5px', paddingBottom: '10px', margin: '0px', color: '#fff', fontFamily: 'Baskerville'}}>{Rolls.nome}</h1>
                 </div>
-
-                <div style={{ paddingTop: '5px', paddingBottom: '5px', paddingLeft: '50px'}}>
-                    <h1 style={{paddingTop:'5px', paddingBottom: '10px', margin: '0px', color: '#fff', fontFamily: 'Baskerville'}}>{`${Rolls.atributo}: ${Rolls.valorRodado}`}</h1>
-                    <h1 style={{paddingTop: '5px', paddingBottom: '10px', margin: '0px',color: '#fff', fontFamily: 'Baskerville'}}>{`Tipo de Sucesso: ${Rolls.tipoDeSucesso}`}</h1>
-                </div>
+                {
+                    (Rolls.atributo === "d4" || Rolls.atributo === "d6" || Rolls.atributo === "d8" || Rolls.atributo === "d10" || Rolls.atributo === "d12" || Rolls.atributo === "d20")
+                    ?
+                    <div style={{ paddingTop: '5px', paddingBottom: '5px', paddingLeft: '50px'}}>
+                        <h1 style={{paddingTop:'5px', paddingBottom: '10px', margin: '0px', color: '#fff', fontFamily: 'Baskerville'}}>
+                            {`Tipo de dados: ${Rolls.valorRodado}${Rolls.atributo}`}</h1>
+                        <h1 style={{paddingTop: '5px', paddingBottom: '10px', margin: '0px',color: '#fff', fontFamily: 'Baskerville'}}>{`Valor Total: ${Rolls.tipoDeSucesso}`}</h1>
+                    </div>
+                    :
+                    <div style={{ paddingTop: '5px', paddingBottom: '5px', paddingLeft: '50px'}}>
+                        <h1 style={{paddingTop:'5px', paddingBottom: '10px', margin: '0px', color: '#fff', fontFamily: 'Baskerville'}}>{`${Rolls.atributo}: ${Rolls.valorRodado}`}</h1>
+                        <h1 style={{paddingTop: '5px', paddingBottom: '10px', margin: '0px',color: '#fff', fontFamily: 'Baskerville'}}>{`Tipo de Sucesso: ${Rolls.tipoDeSucesso}`}</h1>
+                    </div>
+                }
             </div>
             
             

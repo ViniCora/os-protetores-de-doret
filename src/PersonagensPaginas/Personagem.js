@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Atributos from '../Atributos/Atributos';
 import Header from '../Header/Header';
 import AtributesDataService from '../Services/AtributesService.js';
+import RollsDataService from '../Services/RollsService.js';
 import d4 from '../Icons/d4.png'
 import d6 from '../Icons/d6.png'
 import d8 from '../Icons/d8.png'
@@ -78,6 +79,27 @@ function Personagem({Nome}){
         retrieveAtributes();
       }, []);
 
+
+      function salvarRoll(tipoDado, quantidadeDados, valorTotal){
+        
+        var data = {
+            nome: atributes.nome,
+            imagePath: atributes.imagePath,
+            atributo: tipoDado,
+            valorRodado: quantidadeDados,
+            tipoDeSucesso: valorTotal
+        }
+
+        console.log(data);
+
+        RollsDataService.newRoll(data)
+        .then((response) => {
+            console.log("Roll adicionado com sucesso");
+        })
+        .catch((e) => {
+        console.log(e);
+        });
+    }
 
     const retrieveAtributes = () => {
         AtributesDataService.getAtributes(Nome)
@@ -242,9 +264,16 @@ function Personagem({Nome}){
                                                 todosRolls+= ' ).'
 
                                                 setRollValueTotal(somaDados);
+                                                var tipoDados = `d${tipoDeDado}`;
+                                                var valorFinal = `${somaDados} ${todosRolls}`;
+                                                var somaDadosString = `${somaDados}`
                                                 if(nDeDados > 1){
                                                     setRolls(todosRolls);
+                                                    salvarRoll(tipoDados, nDeDados, valorFinal);
+                                                }else{
+                                                    salvarRoll(tipoDados, nDeDados, somaDadosString);
                                                 }
+                                                
                                                 console.log(todosRolls);
                                                 
                                             }
@@ -603,9 +632,17 @@ function Personagem({Nome}){
 
                                                     todosRolls+= ' ).'
 
+
+                                                    var tipoDados = `d${tipoDeDado}`;
+                                                    var valorFinal = `${somaDados} ${todosRolls}`;
+                                                    var somaDadosString = `${somaDados}`
+
                                                     setRollValueTotal(somaDados);
                                                     if(nDeDados > 1 || somaFinal > 0){
                                                         setRolls(todosRolls);
+                                                        salvarRoll(tipoDados, nDeDados, valorFinal);
+                                                    }else{
+                                                        salvarRoll(tipoDados, nDeDados, somaDadosString);
                                                     }
 
                                                 }
