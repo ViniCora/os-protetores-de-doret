@@ -5,6 +5,7 @@ import VitruvianoAntigo from '../Monstros/VitruvianoAntigo.png';
 import VitruvianoNovo from '../Monstros/VitruvianoNovo.png';
 import Acorrentado from '../Monstros/Acorrentado.jpg';
 import MonstroSalomonis from '../Monstros/MonstroSalomonis.png';
+import DevoradorDasSombras from '../Monstros/DevoradorDasSombras.jpg';
 import MonstrosDataService from '../Services/MonstrosService.js';
 
 
@@ -90,6 +91,19 @@ function Monstros(){
                                 <TransformWrapper defaultScale={1}>
                                     <TransformComponent>
                                         <img src={MonstroSalomonis} alt="test" />
+                                    </TransformComponent>
+                                </TransformWrapper>
+                            </div>
+                        </div>
+                    }
+                    {
+                        !monstros.devorador_das_sombras ? '' :
+                        <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                            <h1 style ={{paddingBottom:'30px', paddingTop:'30px', color: '#fff'}}>Salomão Falso:</h1>
+                            <div>
+                                <TransformWrapper defaultScale={1}>
+                                    <TransformComponent>
+                                        <img src={DevoradorDasSombras} alt="test" />
                                     </TransformComponent>
                                 </TransformWrapper>
                             </div>
