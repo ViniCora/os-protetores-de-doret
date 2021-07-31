@@ -26,6 +26,7 @@ import ImagensItensSessao06 from './ImagensItens/ImagensItensSessao06';
 import ImagensItensSessao07 from './ImagensItens/ImagensItensSessao07';
 import ImagensItensSessao08 from './ImagensItens/ImagensItensSessao08';
 import ImagensItensSessao09 from './ImagensItens/ImagensItensSessao09';
+import ImagensItensSessao10 from './ImagensItens/ImagensItensSessao10';
 import TelaCardsOverlay from './TelaCardsOverlay/TelaCardsOverlay';
 
 window.onload = function(){
@@ -58,6 +59,7 @@ window.onload = function(){
             <Route path="/ItensSessao07" component={ImagensItensSessao07} exact />
             <Route path="/ItensSessao08" component={ImagensItensSessao08} exact />
             <Route path="/ItensSessao09" component={ImagensItensSessao09} exact />
+            <Route path="/ItensSessao10" component={ImagensItensSessao10} exact />
             <Route path="/Overlay" component={TelaCardsOverlay} exact />
             {dataPlayer == null ? '' :  dataPlayer.map((d, index) => {
 

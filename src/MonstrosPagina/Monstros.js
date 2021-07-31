@@ -7,6 +7,7 @@ import Acorrentado from '../Monstros/Acorrentado.jpg';
 import MonstroSalomonis from '../Monstros/MonstroSalomonis.png';
 import DevoradorDasSombras from '../Monstros/DevoradorDasSombras.jpg';
 import MonstrosDataService from '../Services/MonstrosService.js';
+import Silencio from '../Monstros/Silencio.png';
 
 
 function Monstros(){
@@ -99,11 +100,24 @@ function Monstros(){
                     {
                         !monstros.devorador_das_sombras ? '' :
                         <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                            <h1 style ={{paddingBottom:'30px', paddingTop:'30px', color: '#fff'}}>Salomão Falso:</h1>
+                            <h1 style ={{paddingBottom:'30px', paddingTop:'30px', color: '#fff'}}>Devorador das Sombras:</h1>
                             <div>
                                 <TransformWrapper defaultScale={1}>
                                     <TransformComponent>
                                         <img src={DevoradorDasSombras} alt="test" />
+                                    </TransformComponent>
+                                </TransformWrapper>
+                            </div>
+                        </div>
+                    }
+                    {
+                        !monstros.silencio ? '' :
+                        <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                            <h1 style ={{paddingBottom:'30px', paddingTop:'30px', color: '#fff'}}></h1>
+                            <div>
+                                <TransformWrapper defaultScale={1}>
+                                    <TransformComponent>
+                                        <img src={Silencio} alt="test" style={{width: '75%'}}/>
                                     </TransformComponent>
                                 </TransformWrapper>
                             </div>
