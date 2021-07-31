@@ -123,6 +123,19 @@ function Monstros(){
                             </div>
                         </div>
                     }
+                    {
+                        !monstros.almas ? '' :
+                        <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                            <h1 style ={{paddingBottom:'30px', paddingTop:'30px', color: '#fff'}}>Almas</h1>
+                            <div>
+                                <TransformWrapper defaultScale={1}>
+                                    <TransformComponent>
+                                        <img src={Silencio} alt="test"/>
+                                    </TransformComponent>
+                                </TransformWrapper>
+                            </div>
+                        </div>
+                    }
                 </div>
             }
         </div>
