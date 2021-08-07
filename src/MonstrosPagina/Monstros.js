@@ -8,7 +8,8 @@ import MonstroSalomonis from '../Monstros/MonstroSalomonis.png';
 import DevoradorDasSombras from '../Monstros/DevoradorDasSombras.jpg';
 import MonstrosDataService from '../Services/MonstrosService.js';
 import Silencio from '../Monstros/Silencio.png';
-
+import almas from '../Monstros/almas.png';
+import RenatoAtemporal from '../Monstros/RenatoAtemporal.png';
 
 function Monstros(){
 
@@ -130,7 +131,20 @@ function Monstros(){
                             <div>
                                 <TransformWrapper defaultScale={1}>
                                     <TransformComponent>
-                                        <img src={Silencio} alt="test"/>
+                                        <img src={almas} alt="test"/>
+                                    </TransformComponent>
+                                </TransformWrapper>
+                            </div>
+                        </div>
+                    }
+                    {
+                        !monstros.homem_atemporal ? '' :
+                        <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                            <h1 style ={{paddingBottom:'30px', paddingTop:'30px', color: '#fff'}}>Homem Atemporal</h1>
+                            <div>
+                                <TransformWrapper defaultScale={1}>
+                                    <TransformComponent>
+                                        <img src={RenatoAtemporal} alt="test"/>
                                     </TransformComponent>
                                 </TransformWrapper>
                             </div>

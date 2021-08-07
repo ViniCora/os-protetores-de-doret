@@ -14,6 +14,8 @@ import JorgeGarcia from '../NPC/Jorge Garcia.jpg';
 import Nelton from '../NPC/Nelton.jpg';
 import PadreRicardo from '../NPC/PadreRicardo.jpg';
 import Violinista from '../NPC/Violinista.jpg';
+import SrRodriguesNovo from '../NPC/SrRodriguesNovo.png';
+import RenatoCaido from '../NPC/RenatoCaido.png';
 import PersonagensDataService from '../Services/PersonagensService.js';
 
 function PersonagensNPC(){
@@ -58,7 +60,11 @@ function PersonagensNPC(){
                             <div>
                                 <TransformWrapper defaultScale={1}>
                                     <TransformComponent>
-                                        <img src={RenatoAlencar} alt="test" />
+                                        {!personagens.renato_caido ? 
+                                            <img src={RenatoAlencar} alt="test" />
+                                        :
+                                            <img src={RenatoCaido} alt="test" />
+                                        }
                                     </TransformComponent>
                                 </TransformWrapper>
                             </div>
@@ -71,7 +77,11 @@ function PersonagensNPC(){
                             <div>
                                 <TransformWrapper defaultScale={1}>
                                     <TransformComponent>
-                                        <img src={SrRodrigues} alt="test" />
+                                    {!personagens.renato_caido ? 
+                                            <img src={SrRodrigues} alt="test" />
+                                        :
+                                            <img src={SrRodriguesNovo} alt="test" />
+                                        }
                                     </TransformComponent>
                                 </TransformWrapper>
                             </div>
